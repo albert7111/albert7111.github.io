@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <rect width="800" height="480" fill="#1a3a5c"/>
+  <g stroke="#7ec8ff" fill="none" stroke-width="2">
+    <!-- ground line -->
+    <line x1="40" y1="390" x2="760" y2="390" stroke-dasharray="8,6"/>
+    <!-- wheels -->
+    <circle cx="190" cy="348" r="52"/>
+    <circle cx="190" cy="348" r="18"/>
+    <circle cx="610" cy="348" r="52"/>
+    <circle cx="610" cy="348" r="18"/>
+    <!-- body -->
+    <path d="M60 250 L60 150 Q70 110 120 110 L300 110 Q320 110 330 130 L350 190 L520 190 Q560 190 570 210 L640 240 Q690 250 720 250 L720 290 L40 290 Z"/>
+    <!-- cab line -->
+    <path d="M60 200 L350 200"/>
+    <!-- window -->
+    <path d="M100 130 L180 130 Q210 130 215 150 L215 190 L100 190 Z"/>
+    <!-- rack lines -->
+    <line x1="360" y1="120" x2="600" y2="120"/>
+    <line x1="360" y1="150" x2="600" y2="150"/>
+    <line x1="470" y1="120" x2="470" y2="150"/>
+    <line x1="540" y1="120" x2="540" y2="150"/>
+    <line x1="400" y1="120" x2="400" y2="150"/>
+  </g>
+  <!-- labels -->
+  <g font-family="monospace" fill="#7ec8ff" font-size="15">
+    <text x="40" y="70">MAHINDRA BOLERO CAMPER 4x4 — SIDE BLUEPRINT (SCHEMATIC)</text>
+    <line x1="100" y1="85" x2="100" y2="105" stroke="#7ec8ff"/>
+    <line x1="380" y1="85" x2="380" y2="105" stroke="#7ec8ff"/>
+    <line x1="100" y1="95" x2="380" y2="95" stroke="#7ec8ff"/>
+    <text x="205" y="85">WHEELBASE 2,680 mm</text>
+    <line x1="40" y1="300" x2="40" y2="348" stroke="#7ec8ff" stroke-dasharray="4,4"/>
+    <text x="48" y="330">GROUND CLEARANCE 200 mm</text>
+    <line x1="360" y1="230" x2="360" y2="250" stroke="#7ec8ff"/>
+    <line x1="620" y1="230" x2="620" y2="250" stroke="#7ec8ff"/>
+    <line x1="360" y1="240" x2="620" y2="240" stroke="#7ec8ff"/>
+    <text x="430" y="230">MEDICINE LOCKER + CANOPY LENGTH ~2,600 mm</text>
+    <line x1="40" y1="40" x2="40" y2="230" stroke="#7ec8ff" stroke-dasharray="4,4"/>
+  </g>
+</svg>
