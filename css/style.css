@@ -437,6 +437,31 @@ footer a:hover { color: var(--gold-light); }
   margin-bottom: 0.3rem;
 }
 
+/* Price tables */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+}
+.price-table th, .price-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #E8EEE9;
+}
+.price-table th {
+  background: var(--green-dark);
+  color: var(--white);
+  font-size: 0.95rem;
+}
+.price-table tr:last-child td { border-bottom: none; }
+.price-table tr:hover td { background: #F6F9F4; }
+.price-table td b { color: var(--green-dark); }
+.price-table .num { text-align: right; font-family: ui-monospace, Menlo, monospace; }
+
 /* Utility */
 .center { text-align: center; }
 
