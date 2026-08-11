@@ -36,31 +36,35 @@
   <main>
     <section class="section">
       <h2>Medical leadership</h2>
-      <p>Our doctors are the calm, trusted hands behind every visit. These are sample profiles — swap in the real names of your team.</p>
+      <p>Our doctors are the calm, trusted hands behind every visit. Tap any doctor for their full profile. These are sample profiles — swap in the real names of your team.</p>
       <div class="cards">
-        <div class="card">
+        <div class="card clickable" data-detail="anitha" data-name="Dr. Anitha Ramesh — Medical Director">
           <span class="icon">&#128113;</span>
           <h3>Medical Director</h3>
           <p><strong>Dr. Anitha Ramesh, MBBS, MD (General Medicine)</strong> — leads clinical care, sets treatment protocols, and reviews the cases our nurses flag each week.</p>
           <p><em>Available: central hub &amp; on-call</em></p>
+          <span class="more">Tap for full profile &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="suresh" data-name="Dr. Suresh Kumar — Rural Physician">
           <span class="icon">&#128113;</span>
           <h3>Rural Physician</h3>
           <p><strong>Dr. Suresh Kumar, MBBS</strong> — rotates with the mobile clinic, handling village check-ups, prescriptions, and chronic care.</p>
           <p><em>Available: on clinic days</em></p>
+          <span class="more">Tap for full profile &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="meenakshi" data-name="Dr. Meenakshi Venkatesh — Paediatrician">
           <span class="icon">&#128113;</span>
           <h3>Paediatrician (Part-time)</h3>
           <p><strong>Dr. Meenakshi Venkatesh, MBBS, DCH</strong> — child health, vaccinations, and malnutrition follow-ups at selected camps.</p>
           <p><em>Available: monthly camps</em></p>
+          <span class="more">Tap for full profile &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="jayashree" data-name="Dr. Jayashree Natarajan — Obstetrician">
           <span class="icon">&#128113;</span>
           <h3>Obstetrician (On-call)</h3>
           <p><strong>Dr. Jayashree Natarajan, MBBS, MS (OBG)</strong> — antenatal support and high-risk pregnancy referrals via the hub.</p>
           <p><em>Available: on-call 24/7</em></p>
+          <span class="more">Tap for full profile &darr;</span>
         </div>
       </div>
     </section>
@@ -137,6 +141,84 @@
       &copy; <span id="year"></span> Maruvaidyam. All rights reserved.
     </div>
   </footer>
+
+  <div class="modal" id="detail-modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="modal-title"></h2>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-content"></div>
+    </div>
+  </div>
+
+  <template id="detail-anitha">
+    <div class="tag">Medical Director</div><div class="tag">General Medicine</div><div class="tag">On-call 24/7</div>
+    <h3>Dr. Anitha Ramesh, MBBS, MD (General Medicine)</h3>
+    <p><strong>Who she is:</strong> The clinical head of Maruvaidyam. Dr. Anitha has spent over 15 years serving district hospitals and rural health centres across the region before joining our network.</p>
+    <h3>What she does</h3>
+    <ul class="spec-list">
+      <li><b>Protocols</b> Sets every treatment and referral guideline we follow</li>
+      <li><b>Case review</b> Reviews the complex cases nurses flag from village camps</li>
+      <li><b>Training</b> Trains nurses and health workers in diagnosis and hygiene</li>
+      <li><b>Quality</b> Audits medicine stock and batch records weekly</li>
+    </ul>
+    <h3>Languages</h3>
+    <p>Tamil, English, Telugu</p>
+    <h3>Availability</h3>
+    <p>Central hub on clinic days; on-call for emergencies via the 24/7 helpline.</p>
+  </template>
+
+  <template id="detail-suresh">
+    <div class="tag">Rural Physician</div><div class="tag">Field Clinics</div>
+    <h3>Dr. Suresh Kumar, MBBS</h3>
+    <p><strong>Who he is:</strong> The doctor villagers see most. Dr. Suresh rotates with the mobile clinic across the weekly loop, and previously ran a private rural practice for a decade.</p>
+    <h3>What he does</h3>
+    <ul class="spec-list">
+      <li><b>Check-ups</b> Handles routine village consultations at every camp</li>
+      <li><b>Prescriptions</b> Writes and adjusts chronic-care prescriptions</li>
+      <li><b>Screening</b> Runs BP, sugar, and vision checks for elders</li>
+      <li><b>Referrals</b> Flags serious cases to the hub or specialists</li>
+    </ul>
+    <h3>Languages</h3>
+    <p>Tamil, English, Hindi</p>
+    <h3>Availability</h3>
+    <p>On clinic days, rotating with the mobile unit on the village loop.</p>
+  </template>
+
+  <template id="detail-meenakshi">
+    <div class="tag">Paediatrician</div><div class="tag">Child Health</div><div class="tag">Monthly camps</div>
+    <h3>Dr. Meenakshi Venkatesh, MBBS, DCH</h3>
+    <p><strong>Who she is:</strong> A child-health specialist who joins selected camps each month. She previously worked in the paediatrics department of a government district hospital.</p>
+    <h3>What she does</h3>
+    <ul class="spec-list">
+      <li><b>Child care</b> Treats childhood fevers, infections, and growth issues</li>
+      <li><b>Vaccinations</b> Counsels families and coordinates immunisation days</li>
+      <li><b>Nutrition</b> Follows up on malnutrition and anaemia in children</li>
+      <li><b>Training</b> Teaches mothers about home care and danger signs</li>
+    </ul>
+    <h3>Languages</h3>
+    <p>Tamil, English</p>
+    <h3>Availability</h3>
+    <p>Monthly child-health camps and on-call for paediatric queries.</p>
+  </template>
+
+  <template id="detail-jayashree">
+    <div class="tag">Obstetrician</div><div class="tag">Maternal Health</div><div class="tag">On-call</div>
+    <h3>Dr. Jayashree Natarajan, MBBS, MS (OBG)</h3>
+    <p><strong>Who she is:</strong> Our maternal-health specialist, connected to the hub for every pregnancy-related concern. She has guided thousands of rural deliveries safely.</p>
+    <h3>What she does</h3>
+    <ul class="spec-list">
+      <li><b>Antenatal</b> Reviews expectant mothers referred from village camps</li>
+      <li><b>High-risk</b> Manages high-risk pregnancy referrals to the CHC/hospital</li>
+      <li><b>Guidance</b> Advises nurses on antenatal check-up protocols</li>
+      <li><b>Postnatal</b> Follows up on mothers and newborns after delivery</li>
+    </ul>
+    <h3>Languages</h3>
+    <p>Tamil, English</p>
+    <h3>Availability</h3>
+    <p>On-call 24/7 through the hub helpline.</p>
+  </template>
 
   <script src="js/main.js"></script>
 </body>
