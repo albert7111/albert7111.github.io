@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <rect width="800" height="460" fill="#1a3a5c"/>
+  <g stroke="#7ec8ff" fill="none" stroke-width="2">
+    <!-- ground line -->
+    <line x1="30" y1="380" x2="770" y2="380" stroke-dasharray="8,6"/>
+    <!-- wheels -->
+    <circle cx="210" cy="338" r="46"/>
+    <circle cx="210" cy="338" r="16"/>
+    <circle cx="580" cy="338" r="46"/>
+    <circle cx="580" cy="338" r="16"/>
+    <!-- body - tall van -->
+    <path d="M60 250 L60 140 Q70 100 130 100 L300 100 Q340 100 360 130 L470 150 Q520 160 540 200 L680 220 Q720 230 720 260 L720 290 L40 290 Z"/>
+    <!-- sliding door -->
+    <rect x="120" y="180" width="140" height="105" rx="4"/>
+    <!-- door handle line -->
+    <line x1="245" y1="215" x2="255" y2="215"/>
+    <!-- roof line -->
+    <line x1="70" y1="120" x2="330" y2="120"/>
+    <line x1="340" y1="150" x2="480" y2="170"/>
+    <!-- partition line (medicine window) -->
+    <line x1="430" y1="160" x2="430" y2="290"/>
+  </g>
+  <g font-family="monospace" fill="#7ec8ff" font-size="15">
+    <text x="40" y="60">MARUTI SUZUKI EECO CARGO — SIDE BLUEPRINT (SCHEMATIC)</text>
+    <line x1="90" y1="75" x2="90" y2="95" stroke="#7ec8ff"/>
+    <line x1="430" y1="75" x2="430" y2="95" stroke="#7ec8ff"/>
+    <line x1="90" y1="85" x2="430" y2="85" stroke="#7ec8ff"/>
+    <text x="220" y="75">WHEELBASE 2,630 mm</text>
+    <line x1="430" y1="210" x2="450" y2="210" stroke="#7ec8ff"/>
+    <text x="452" y="216">SLIDING DISPENSING DOOR</text>
+    <line x1="430" y1="290" x2="430" y2="338" stroke="#7ec8ff" stroke-dasharray="4,4"/>
+    <text x="438" y="320">GROUND CLEARANCE 170 mm</text>
+    <line x1="40" y1="300" x2="40" y2="338" stroke="#7ec8ff" stroke-dasharray="4,4"/>
+  </g>
+</svg>
