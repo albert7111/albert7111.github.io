@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Maruvaidyam fleet and hub network — rugged mobile clinic vehicles and our hub-and-spoke stationing across rural villages.">
+  <meta name="description" content="Maruvaidyam fleet and hub network — rugged mobile clinic vehicles with photos and blueprints, and our hub-and-spoke stationing across rural villages.">
   <title>Fleet &amp; Hubs | Maruvaidyam</title>
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="stylesheet" href="css/style.css">
@@ -30,7 +30,7 @@
 
   <section class="page-hero">
     <h1>Our Fleet &amp; Hub Network</h1>
-    <p>Rugged mobile clinics that reach where roads don't.</p>
+    <p>Rugged mobile clinics that reach where roads don't. Tap any vehicle for photos, blueprints, and full details.</p>
   </section>
 
   <main>
@@ -38,23 +38,23 @@
       <h2>Fleet vehicles</h2>
       <p>Every vehicle is chosen to survive broken mud tracks, sandy riverbeds, and mountain roads — and to carry a working clinic inside.</p>
       <div class="cards">
-        <div class="card">
+        <div class="card clickable" data-detail="bolero" data-name="Mahindra Bolero Camper 4x4">
           <span class="icon">&#128663;</span>
           <h3>Mahindra Bolero Camper 4x4</h3>
-          <p><strong>Our flagship mobile clinic.</strong> Four-wheel drive handles deep mud, seasonal floods, and unpaved mountain roads. The open rear bed is fitted with a custom canopy housing a secure medicine locker, diagnostic counter, and folding patient shade.</p>
-          <p><em>Used cost: &#8377;3.5&ndash;4.2 lakh | Spare parts available in almost every sub-district town.</em></p>
+          <p><strong>Our flagship mobile clinic.</strong> Extreme off-road capability, custom clinic canopy, secure medicine locker.</p>
+          <span class="more">Tap for photos &amp; blueprint &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="eeco" data-name="Maruti Suzuki Eeco Cargo">
           <span class="icon">&#128666;</span>
           <h3>Maruti Suzuki Eeco Cargo</h3>
-          <p>High ground clearance and a compact turning radius for narrow village alleyways. Factory CNG option cuts running costs dramatically, and the sliding doors form a natural medicine dispensing window.</p>
-          <p><em>New ex-showroom: &#8377;5.3&ndash;5.6 lakh.</em></p>
+          <p>High ground clearance for narrow village lanes, CNG option, sliding-door medicine dispensing window.</p>
+          <span class="more">Tap for photos &amp; blueprint &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="bike" data-name="First-Responder Bike Fleet">
           <span class="icon">&#128690;</span>
           <h3>First-Responder Bike Fleet</h3>
-          <p>Two rugged motorcycles (Hero Xpulse 200 / Honda Unicorn) that reach zones no four-wheeler can — collapsed bridges, forest paths, rocky riverbeds. Bike 1 carries the smart diagnostic suitcase; Bike 2 is the mobile pharmacy.</p>
-          <p><em>Total for 2 bikes: &#8377;3.5&ndash;4.0 lakh.</em></p>
+          <p>Two rugged motorcycles for zones no four-wheeler can reach — collapsed bridges, forest paths, riverbeds.</p>
+          <span class="more">Tap for photos &amp; blueprint &darr;</span>
         </div>
       </div>
     </section>
@@ -63,20 +63,23 @@
       <h2>Hub-and-spoke stationing</h2>
       <p>We run on the same <strong>hub-and-spoke model</strong> proven across rural India. A central base hub holds specialists, diagnostics, and bulk medicine stock. From it, mobile spokes travel to villages on a fixed weekly schedule — predictable, so patients always know when we come.</p>
       <div class="cards">
-        <div class="card">
+        <div class="card clickable" data-detail="hub" data-name="Central Hub (Taluk Town)">
           <span class="icon">&#127970;</span>
           <h3>Central Hub (Taluk Town)</h3>
-          <p>The district-level base: consulting rooms, specialist doctors on call, laboratory tie-ups, and bulk medicine warehousing. This is where complex cases are referred.</p>
+          <p>The district-level base: consulting rooms, specialist doctors on call, laboratory tie-ups, and bulk medicine warehousing.</p>
+          <span class="more">Tap for details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="chc" data-name="Community Health Centre (CHC) Partner">
           <span class="icon">&#127963;</span>
           <h3>Community Health Centre (CHC) Partner</h3>
-          <p>We station alongside the nearest government CHC for emergency referrals, maternity support, and diagnostic sharing — strengthening, not duplicating, public care.</p>
+          <p>We station alongside the nearest government CHC for emergency referrals, maternity support, and diagnostics.</p>
+          <span class="more">Tap for details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="phc" data-name="Primary Health Centre (PHC) Spokes">
           <span class="icon">&#127963;</span>
           <h3>Primary Health Centre (PHC) Spokes</h3>
-          <p>Village-level stops where our mobile unit camps weekly, handling routine check-ups, chronic care refills, and medicine dispensing right in the community.</p>
+          <p>Village-level stops where our mobile unit camps weekly, handling routine check-ups, refills, and medicine dispensing.</p>
+          <span class="more">Tap for details &darr;</span>
         </div>
       </div>
     </section>
@@ -129,6 +132,132 @@
       &copy; <span id="year"></span> Maruvaidyam. All rights reserved.
     </div>
   </footer>
+
+  <div class="modal" id="detail-modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="modal-title"></h2>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-content"></div>
+    </div>
+  </div>
+
+  <template id="detail-bolero">
+    <img src="assets/bolero-camper.jpg" alt="Mahindra Bolero Camper 4x4 front view">
+    <div class="tag">Extreme off-road</div><div class="tag">4x4</div><div class="tag">Flagship clinic</div>
+    <p><strong>Why we chose it:</strong> The Mahindra Bolero Camper 4x4 is the gold standard for rural India's worst roads. Its four-wheel drive handles deep mud, seasonal floods, and unpaved mountain roads where ordinary vans get stuck. It has been the backbone of rural transport across India for decades, which means spare parts are available in almost every sub-district town — a critical advantage when you're far from a service centre.</p>
+
+    <h3>How it becomes a clinic</h3>
+    <p>The open rear cargo bed is fitted with a locally fabricated canopy that houses a secure, lockable medicine locker, a fold-down diagnostic counter, and an external folding patient shade. Patients walk up to the counter at the back, speak to the nurse, and receive medicine through a window without entering the vehicle.</p>
+
+    <h3>Key specifications</h3>
+    <ul class="spec-list">
+      <li><b>Engine</b> 2.5L diesel, ~75 bhp</li>
+      <li><b>Drive</b> 4x4 with transfer case</li>
+      <li><b>Payload</b> ~1,200 kg (canopy + stock + staff)</li>
+      <li><b>Seating</b> Cab 2+3; rear converted to clinic</li>
+      <li><b>Used cost</b> &#8377;3.5&ndash;4.2 lakh (3&ndash;5 yrs old)</li>
+      <li><b>Ground clearance</b> ~200 mm</li>
+      <li><b>Best for</b> Deep mud, floods, mountain roads</li>
+    </ul>
+
+    <figure class="blueprint">
+      <img src="assets/blueprint-bolero.svg" alt="Bolero Camper side blueprint">
+      <figcaption>Side blueprint — schematic. Wheelbase 2,680 mm; rear canopy carries the medicine locker and diagnostic counter.</figcaption>
+    </figure>
+  </template>
+
+  <template id="detail-eeco">
+    <img src="assets/eeco.jpg" alt="Maruti Suzuki Eeco Cargo">
+    <div class="tag">Narrow lanes</div><div class="tag">CNG option</div><div class="tag">Low running cost</div>
+    <p><strong>Why we chose it:</strong> The Maruti Suzuki Eeco is India's most common commercial van, built for the same streets we serve. Its high ground clearance and compact turning radius let it navigate narrow village alleyways that larger vans can't enter. The factory CNG option cuts fuel cost by roughly half compared to diesel — crucial for keeping a non-profit self-sustaining.</p>
+
+    <h3>How it becomes a clinic</h3>
+    <p>The factory sliding side door becomes a natural, secure medicine dispensing window. A partition separates the driver's cabin from the clinic area in the rear, where shelving holds medicines, and a fold-down table acts as the diagnostic desk. Patients are served through the sliding window while standing safely outside.</p>
+
+    <h3>Key specifications</h3>
+    <ul class="spec-list">
+      <li><b>Engine</b> 1.2L petrol / factory-fitted CNG</li>
+      <li><b>Drive</b> Rear-wheel drive</li>
+      <li><b>Payload</b> ~700 kg</li>
+      <li><b>Seating</b> Cargo variant: 2 seats + cargo bay</li>
+      <li><b>New cost</b> &#8377;5.3&ndash;5.6 lakh ex-showroom</li>
+      <li><b>Ground clearance</b> ~170 mm</li>
+      <li><b>Best for</b> Flat rural terrain, narrow lanes, fuel economy</li>
+    </ul>
+
+    <figure class="blueprint">
+      <img src="assets/blueprint-eeco.svg" alt="Eeco Cargo side blueprint">
+      <figcaption>Side blueprint — schematic. Sliding door doubles as the medicine dispensing window; rear bay is shelved for stock.</figcaption>
+    </figure>
+  </template>
+
+  <template id="detail-bike">
+    <img src="assets/xpulse.jpg" alt="Hero Xpulse 200 adventure motorcycle">
+    <img src="assets/unicorn.jpg" alt="Honda Unicorn motorcycle">
+    <div class="tag">Extreme terrain</div><div class="tag">Zero-infrastructure</div><div class="tag">2 nimble units</div>
+    <p><strong>Why we chose them:</strong> In the most remote zones there are no roads at all — only collapsed bridges, forest walking paths, and rocky riverbeds. A bike fleet (Hero Xpulse 200 + Honda Unicorn) is the only vehicle that fits. The <strong>Hero Xpulse 200</strong> is purpose-built for rough, unpaved terrain with long-travel suspension. The <strong>Honda Unicorn</strong> is one of the most reliable commuter bikes in India, ideal for carrying payload on flatter stretches.</p>
+
+    <h3>How they split the clinic</h3>
+    <p>The fleet splits into two nimble units: <strong>Bike 1</strong> carries a portable smart diagnostic suitcase (tablet + BP monitor + pulse oximeter + glucometer) in a rugged top box. <strong>Bike 2</strong> carries a heavy-duty saddlebag acting as the mobile pharmacy. Together they deliver a basic clinic to the village square, treat mild cases on the spot, and flag anything serious back to the four-wheeler or hub.</p>
+
+    <h3>Key specifications</h3>
+    <ul class="spec-list">
+      <li><b>Xpulse 200 engine</b> 199cc single, ~19 bhp</li>
+      <li><b>Unicorn engine</b> 162.7cc single, ~12.9 bhp</li>
+      <li><b>Xpulse suspension</b> Long-travel front fork, 220 mm clearance</li>
+      <li><b>Unicorn payload</b> Up to 130 kg with saddlebags</li>
+      <li><b>Total cost</b> &#8377;3.5&ndash;4.0 lakh for two bikes</li>
+      <li><b>Fuel</b> ~40&ndash;45 km/l each</li>
+      <li><b>Best for</b> Collapsed bridges, forest paths, riverbeds</li>
+    </ul>
+
+    <figure class="blueprint">
+      <img src="assets/blueprint-bike.svg" alt="First-responder bike blueprint">
+      <figcaption>Side blueprint — schematic. Unit 1: diagnostic top box. Unit 2: saddlebag pharmacy.</figcaption>
+    </figure>
+  </template>
+
+  <template id="detail-hub">
+    <div class="tag">Specialists on call</div><div class="tag">Medicine warehouse</div><div class="tag">Referral centre</div>
+    <p><strong>What happens here:</strong> The central hub is the district-level base of the network. It holds consulting rooms, keeps specialist doctors on call for complex cases, and warehouses bulk medicine stock so the mobile units never run dry. It is the 'hub' in the hub-and-spoke model — every spoke (village unit) reports here.</p>
+
+    <h3>Key roles</h3>
+    <ul class="spec-list">
+      <li><b>Consultations</b> In-person specialist clinics for referred patients</li>
+      <li><b>Diagnostics</b> Lab tie-ups for blood tests and imaging</li>
+      <li><b>Stock</b> Bulk generic medicine warehousing &amp; batch tracking</li>
+      <li><b>Coordination</b> Schedules every village loop and dispatches units</li>
+      <li><b>Emergency</b> 24/7 call line routing to doctors and ambulances</li>
+    </ul>
+  </template>
+
+  <template id="detail-chc">
+    <div class="tag">Emergency referrals</div><div class="tag">Maternity support</div>
+    <p><strong>What this partnership means:</strong> The Community Health Centre (CHC) is the government's block-level hospital. Instead of duplicating its work, we station alongside it. When our mobile unit finds a case beyond its scope — an emergency, a high-risk pregnancy, or a surgical need — we refer directly to the CHC and help the patient get there.</p>
+
+    <h3>Key roles</h3>
+    <ul class="spec-list">
+      <li><b>Referrals</b> Immediate handoff for emergencies</li>
+      <li><b>Maternity</b> Support for delivery care coordination</li>
+      <li><b>Diagnostics</b> Shared access to lab and X-ray facilities</li>
+      <li><b>Medicine backup</b> Cross-stocking for hard-to-find items</li>
+    </ul>
+  </template>
+
+  <template id="detail-phc">
+    <div class="tag">Weekly camps</div><div class="tag">Chronic care refills</div>
+    <p><strong>What happens at each stop:</strong> Primary Health Centres are the village-level foundation of public health. Our mobile unit camps beside each PHC on its scheduled day, handling routine check-ups, blood-pressure and sugar tracking, and repeat medicine refills for chronic patients — so elderly residents never have to travel to town just for their regular tablets.</p>
+
+    <h3>Key roles</h3>
+    <ul class="spec-list">
+      <li><b>Routine care</b> Check-ups and common illness treatment</li>
+      <li><b>Chronic refills</b> Monthly diabetes &amp; BP medicine supply</li>
+      <li><b>Awareness</b> Nutrition, hygiene, and water-safety talks</li>
+      <li><b>Screening</b> BP, sugar, and vision camps for elders</li>
+    </ul>
+  </template>
 
   <script src="js/main.js"></script>
 </body>
