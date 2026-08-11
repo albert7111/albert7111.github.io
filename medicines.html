@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Maruvaidyam medicines — our essential generic medicine formulary sourced from Jan Aushadhi Kendras, quality-assured and affordable.">
+  <meta name="description" content="Maruvaidyam medicines — our essential generic medicine formulary sourced from Jan Aushadhi Kendras, quality-assured and affordable. Tap each category for full details.">
   <title>Medicines | Maruvaidyam</title>
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="stylesheet" href="css/style.css">
@@ -30,7 +30,7 @@
 
   <section class="page-hero">
     <h1>Our Medicines</h1>
-    <p>Real, quality-assured generic medicines — sourced the honest way.</p>
+    <p>Real, quality-assured generic medicines — sourced the honest way. Tap any category for the full drug list and details.</p>
   </section>
 
   <main>
@@ -51,47 +51,55 @@
 
     <section class="section">
       <h2>Our essential formulary</h2>
-      <p>What we carry in the mobile clinic every single day — the medicines rural families need most:</p>
+      <p>What we carry in the mobile clinic every single day — tap any category to see the actual medicines, what they treat, and typical prices.</p>
       <div class="cards">
-        <div class="card">
+        <div class="card clickable" data-detail="pain" data-name="Pain &amp; Fever Medicines">
           <span class="icon">&#128137;</span>
           <h3>Pain &amp; Fever</h3>
-          <p>Paracetamol (500mg/650mg), Ibuprofen, Diclofenac gel — for fevers, body aches, and the joint pain common in manual labour.</p>
+          <p>Paracetamol, Ibuprofen, Diclofenac gel — for fevers, body aches, and joint pain.</p>
+          <span class="more">Tap for drug list &amp; details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="heart" data-name="Heart &amp; Blood Pressure Medicines">
           <span class="icon">&#129505;</span>
           <h3>Heart &amp; Blood Pressure</h3>
-          <p>Amlodipine, Atenolol, Enalapril — continuous supply for elderly residents managing hypertension and heart conditions.</p>
+          <p>Amlodipine, Atenolol, Enalapril — for hypertension and heart conditions.</p>
+          <span class="more">Tap for drug list &amp; details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="diabetes" data-name="Diabetes Care Medicines">
           <span class="icon">&#129516;</span>
           <h3>Diabetes Care</h3>
-          <p>Metformin (500mg), Glimepiride, Glibenclamide — steady stock so diabetes patients never miss a dose.</p>
+          <p>Metformin, Glimepiride, Glibenclamide — so patients never miss a dose.</p>
+          <span class="more">Tap for drug list &amp; details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="stomach" data-name="Stomach &amp; Waterborne Medicines">
           <span class="icon">&#127807;</span>
           <h3>Stomach &amp; Waterborne</h3>
-          <p>Omeprazole/Pantoprazole, ORS packets, Zinc Sulfate, Domperidone, Loperamide — vital for flood-season gut infections.</p>
+          <p>Omeprazole, ORS, Zinc, Domperidone, Loperamide — for gut infections.</p>
+          <span class="more">Tap for drug list &amp; details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="infections" data-name="Infections &amp; Skin Medicines">
           <span class="icon">&#128300;</span>
           <h3>Infections &amp; Skin</h3>
-          <p>Amoxicillin, Azithromycin, Cotrimoxazole, Clotrimazole &amp; Fluconazole creams — for respiratory and skin infections.</p>
+          <p>Amoxicillin, Azithromycin, Clotrimazole — for respiratory and skin infections.</p>
+          <span class="more">Tap for drug list &amp; details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="respiratory" data-name="Respiratory &amp; Allergy Medicines">
           <span class="icon">&#128168;</span>
           <h3>Respiratory &amp; Allergy</h3>
-          <p>Cetirizine, Levocetirizine, Salbutamol inhalers, Budesonide, cough syrups — relief for asthma and seasonal allergies.</p>
+          <p>Cetirizine, Salbutamol inhalers, Budesonide — relief for asthma and allergies.</p>
+          <span class="more">Tap for drug list &amp; details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="vitamins" data-name="Vitamins &amp; Minerals">
           <span class="icon">&#129655;</span>
           <h3>Vitamins &amp; Minerals</h3>
-          <p>Vitamin D3, Ferrous Sulfate (iron), calcium — fighting anaemia and deficiencies common in rural diets.</p>
+          <p>Vitamin D3, Ferrous Sulfate, calcium — fighting anaemia and deficiencies.</p>
+          <span class="more">Tap for drug list &amp; details &darr;</span>
         </div>
-        <div class="card">
+        <div class="card clickable" data-detail="women" data-name="Women &amp; Child Health">
           <span class="icon">&#128102;</span>
           <h3>Women &amp; Child Health</h3>
-          <p>Suvidha sanitary napkins (₹1 each), safe delivery kits, child nutrition supplements.</p>
+          <p>Suvidha napkins (&#8377;1 each), safe delivery kits, child nutrition.</p>
+          <span class="more">Tap for details &darr;</span>
         </div>
       </div>
     </section>
@@ -151,6 +159,156 @@
       &copy; <span id="year"></span> Maruvaidyam. All rights reserved.
     </div>
   </footer>
+
+  <div class="modal" id="detail-modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="modal-title"></h2>
+        <button class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-content"></div>
+    </div>
+  </div>
+
+  <template id="detail-pain">
+    <div class="tag">Analgesics &amp; Antipyretics</div>
+    <p><strong>What these treat:</strong> Fever, body aches, joint pain, headaches, and the muscle strain common in agricultural and manual labour.</p>
+    <h3>Medicines we stock</h3>
+    <ul class="spec-list">
+      <li><b>Paracetamol 500mg / 650mg</b> Fever &amp; pain relief — the most used medicine in rural India</li>
+      <li><b>Ibuprofen 200mg / 400mg</b> Pain + anti-inflammatory for body and joint pain</li>
+      <li><b>Diclofenac gel (topical)</b> Localised joint and muscle pain relief</li>
+    </ul>
+    <h3>Typical Jan Aushadhi prices</h3>
+    <ul class="spec-list">
+      <li><b>Paracetamol 650mg</b> ~&#8377;4.10 for 10 tablets</li>
+      <li><b>Ibuprofen 400mg</b> ~&#8377;8 for 10 tablets</li>
+      <li><b>Diclofenac gel</b> ~&#8377;20 for 30g tube</li>
+    </ul>
+    <p><em>Branded equivalents typically cost 3&ndash;10 times more for the same medicine.</em></p>
+  </template>
+
+  <template id="detail-heart">
+    <div class="tag">Cardiovascular</div>
+    <p><strong>What these treat:</strong> High blood pressure (hypertension), heart conditions, and the day-to-day management that keeps elderly patients stable. Uncontrolled BP is a leading cause of rural emergencies — continuous supply saves lives.</p>
+    <h3>Medicines we stock</h3>
+    <ul class="spec-list">
+      <li><b>Amlodipine 5mg</b> First-line blood pressure control</li>
+      <li><b>Atenolol 25mg / 50mg</b> Beta-blocker for BP and angina</li>
+      <li><b>Enalapril 5mg</b> ACE inhibitor for hypertension &amp; heart failure</li>
+      <li><b>Aspirin 75mg (low dose)</b> Heart attack &amp; stroke prevention (under doctor advice)</li>
+    </ul>
+    <h3>Typical Jan Aushadhi prices</h3>
+    <ul class="spec-list">
+      <li><b>Amlodipine 5mg</b> ~&#8377;7 for 10 tablets</li>
+      <li><b>Atenolol 50mg</b> ~&#8377;10 for 10 tablets</li>
+      <li><b>Aspirin 75mg</b> ~&#8377;4 for 10 tablets</li>
+    </ul>
+    <p><em>Chronic patients get a full month's supply per visit so they never run out.</em></p>
+  </template>
+
+  <template id="detail-diabetes">
+    <div class="tag">Antidiabetics</div>
+    <p><strong>What these treat:</strong> Type 2 diabetes — increasingly common in rural populations. Regular, affordable supply of these medicines is what keeps patients out of hospital.</p>
+    <h3>Medicines we stock</h3>
+    <ul class="spec-list">
+      <li><b>Metformin 500mg</b> First-line oral diabetes medication</li>
+      <li><b>Glimepiride 1mg / 2mg</b> Sulfonylurea that lowers blood sugar</li>
+      <li><b>Glibenclamide 5mg</b> Low-cost alternative for sugar control</li>
+    </ul>
+    <h3>Typical Jan Aushadhi prices</h3>
+    <ul class="spec-list">
+      <li><b>Metformin 500mg</b> ~&#8377;6.50 for 10 tablets</li>
+      <li><b>Glimepiride 2mg</b> ~&#8377;15 for 10 tablets</li>
+    </ul>
+    <p><em>We also carry glucometers and test strips so patients can track their sugar at home.</em></p>
+  </template>
+
+  <template id="detail-stomach">
+    <div class="tag">Gastrointestinal</div>
+    <p><strong>What these treat:</strong> Acidity, ulcers, diarrhoea, vomiting — especially common in flood-prone pockets where waterborne illness spreads quickly. These medicines are stocked heavily before monsoon.</p>
+    <h3>Medicines we stock</h3>
+    <ul class="spec-list">
+      <li><b>Omeprazole / Pantoprazole 20mg</b> Antacids for acidity &amp; ulcers</li>
+      <li><b>ORS (Oral Rehydration Salts)</b> Dehydration from diarrhoea — a lifesaver for children</li>
+      <li><b>Zinc Sulfate</b> Reduces diarrhoea severity &amp; duration in children</li>
+      <li><b>Domperidone 10mg</b> Anti-vomiting</li>
+      <li><b>Loperamide 2mg</b> Stops severe diarrhoea</li>
+    </ul>
+    <h3>Typical Jan Aushadhi prices</h3>
+    <ul class="spec-list">
+      <li><b>ORS packet</b> ~&#8377;10 per sachet</li>
+      <li><b>Omeprazole 20mg</b> ~&#8377;8 for 10 tablets</li>
+      <li><b>Zinc sulfate</b> ~&#8377;6 for 10 tablets</li>
+    </ul>
+  </template>
+
+  <template id="detail-infections">
+    <div class="tag">Anti-infectives &amp; Antibiotics</div>
+    <p><strong>What these treat:</strong> Bacterial respiratory infections, skin infections, and fungal conditions common in rural work environments. Antibiotics are dispensed only on clinical advice.</p>
+    <h3>Medicines we stock</h3>
+    <ul class="spec-list">
+      <li><b>Amoxicillin 250mg / 500mg</b> Broad-spectrum antibiotic</li>
+      <li><b>Azithromycin 500mg</b> Short-course antibiotic for respiratory infections</li>
+      <li><b>Cotrimoxazole</b> Trimethoprim + sulfamethoxazole for various infections</li>
+      <li><b>Clotrimazole cream</b> Fungal skin infections</li>
+      <li><b>Fluconazole 150mg</b> Severe fungal infections</li>
+    </ul>
+    <h3>Responsible use</h3>
+    <p>We follow the government's guidelines on antibiotic use. We never sell antibiotics over the counter — a nurse or doctor must assess the patient first. This protects the community from antibiotic resistance.</p>
+  </template>
+
+  <template id="detail-respiratory">
+    <div class="tag">Respiratory &amp; Anti-allergics</div>
+    <p><strong>What these treat:</strong> Asthma, seasonal allergies, coughs and colds. Breathing problems are among the top reasons rural patients seek help, especially during harvest and winter seasons.</p>
+    <h3>Medicines we stock</h3>
+    <ul class="spec-list">
+      <li><b>Cetirizine 10mg</b> Allergic rhinitis &amp; skin allergies</li>
+      <li><b>Levocetirizine 5mg</b> Stronger daily allergy control</li>
+      <li><b>Salbutamol inhaler 100mcg</b> Quick asthma relief</li>
+      <li><b>Budesonide inhaler</b> Daily asthma &amp; COPD control</li>
+      <li><b>Cough syrups</b> Expectorants &amp; suppressants</li>
+    </ul>
+    <h3>Typical Jan Aushadhi prices</h3>
+    <ul class="spec-list">
+      <li><b>Cetirizine 10mg</b> ~&#8377;4.30 for 10 tablets</li>
+      <li><b>Salbutamol inhaler</b> ~&#8377;90 per inhaler</li>
+    </ul>
+  </template>
+
+  <template id="detail-vitamins">
+    <div class="tag">Vitamins &amp; Minerals</div>
+    <p><strong>What these treat:</strong> Anaemia (iron deficiency) and vitamin deficiencies, which are widespread in rural diets. Anaemia especially affects women and children and causes fatigue, weakness, and poor growth.</p>
+    <h3>Medicines &amp; supplements we stock</h3>
+    <ul class="spec-list">
+      <li><b>Ferrous Sulfate (iron) + Folic Acid</b> Anaemia treatment &amp; prevention</li>
+      <li><b>Vitamin D3</b> Bone health, especially for elders</li>
+      <li><b>Calcium</b> Bone strength &amp; joint support</li>
+      <li><b>Multivitamin</b> General nutrition support</li>
+      <li><b>Vitamin B-Complex</b> Energy &amp; nerve health</li>
+    </ul>
+    <h3>Typical Jan Aushadhi prices</h3>
+    <ul class="spec-list">
+      <li><b>Iron + Folic Acid</b> ~&#8377;6 for 10 tablets</li>
+      <li><b>Vitamin D3 60K</b> ~&#8377;12 per capsule</li>
+      <li><b>Calcium + Vit D3</b> ~&#8377;14 for 10 tablets</li>
+    </ul>
+  </template>
+
+  <template id="detail-women">
+    <div class="tag">Maternal &amp; Child Health</div>
+    <p><strong>What this covers:</strong> Products and guidance for women and children — one of the most underserved groups in rural healthcare. We stock these at every village stop.</p>
+    <h3>Items we stock</h3>
+    <ul class="spec-list">
+      <li><b>Suvidha sanitary napkins</b> &#8377;1 per pad — low-cost period hygiene from the Jan Aushadhi scheme</li>
+      <li><b>Iron + Folic Acid</b> Anaemia prevention in pregnancy</li>
+      <li><b>Zinc + ORS kits</b> Child diarrhoea management</li>
+      <li><b>Vitamin A supplements</b> Child nutrition (under protocol)</li>
+      <li><b>Deworming tablets</b> Annual school-age deworming</li>
+    </ul>
+    <h3>Maternity support</h3>
+    <p>Our nurses guide expectant mothers on antenatal check-ups and refer high-risk pregnancies directly to the Community Health Centre or district hospital.</p>
+  </template>
 
   <script src="js/main.js"></script>
 </body>
