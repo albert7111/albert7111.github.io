@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440">
+  <rect width="800" height="440" fill="#1a3a5c"/>
+  <g stroke="#7ec8ff" fill="none" stroke-width="2">
+    <!-- ground line -->
+    <line x1="30" y1="370" x2="770" y2="370" stroke-dasharray="8,6"/>
+    <!-- wheels -->
+    <circle cx="250" cy="330" r="44"/>
+    <circle cx="250" cy="330" r="15"/>
+    <circle cx="560" cy="330" r="44"/>
+    <circle cx="560" cy="330" r="15"/>
+    <!-- frame -->
+    <line x1="210" y1="285" x2="600" y2="285"/>
+    <!-- seat -->
+    <path d="M330 285 L330 240 Q360 235 385 240 L385 285 Z"/>
+    <!-- tank -->
+    <path d="M200 285 L210 240 Q240 230 260 240 L275 285 Z"/>
+    <!-- handlebar -->
+    <path d="M200 250 L150 220 Q140 210 150 205"/>
+    <line x1="120" y1="205" x2="180" y2="205"/>
+    <!-- headlamp -->
+    <circle cx="118" cy="205" r="10"/>
+    <!-- engine -->
+    <path d="M250 285 L270 285 L270 310 Q265 330 250 330 L240 315 L240 285 Z"/>
+    <!-- rear pannier saddlebag (pharmacy) -->
+    <path d="M600 285 L660 270 Q690 268 700 280 L700 330 Q680 335 660 330 L600 330 Z"/>
+    <!-- diagnostic suitcase top box -->
+    <path d="M320 235 L360 228 Q390 226 400 236 L400 240 L320 240 Z"/>
+    <!-- front fork -->
+    <line x1="175" y1="250" x2="215" y2="305"/>
+    <!-- rear shock -->
+    <line x1="585" y1="270" x2="565" y2="320"/>
+  </g>
+  <g font-family="monospace" fill="#7ec8ff" font-size="15">
+    <text x="40" y="55">FIRST-RESPONDER BIKE — SIDE BLUEPRINT (SCHEMATIC)</text>
+    <text x="40" y="75">UNIT 1: DIAGNOSTIC SUITCASE CARRIER</text>
+    <line x1="320" y1="110" x2="320" y2="140" stroke="#7ec8ff"/>
+    <line x1="400" y1="110" x2="400" y2="140" stroke="#7ec8ff"/>
+    <line x1="320" y1="125" x2="400" y2="125" stroke="#7ec8ff"/>
+    <text x="322" y="105">TOP BOX: BP + OXY + GLUCO METERS</text>
+    <line x1="660" y1="290" x2="690" y2="290" stroke="#7ec8ff"/>
+    <text x="660" y="280">SADDLEBAG PHARMACY</text>
+    <line x1="250" y1="330" x2="250" y2="370" stroke="#7ec8ff" stroke-dasharray="4,4"/>
+    <text x="258" y="362">GROUND CLEARANCE 220 mm</text>
+  </g>
+</svg>
